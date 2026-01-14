@@ -6,9 +6,254 @@
     --font-body: 'Inter', sans-serif;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
 body {
     font-family: var(--font-body);
     background-color: #f4f6f9;
+}
+
+/* Bootstrap Icons Fix */
+.bi::before,
+[class*=" bi-"]::before,
+[class^=bi-]::before {
+    display: inline-block;
+    font-family: bootstrap-icons !important;
+    font-style: normal;
+    font-weight: 400 !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: -.125em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================================
+   FULL WIDTH MESSAGE SECTION - PREMIUM STYLES
+   ========================================= */
+
+.premium-message-container {
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.message-desk-icon i {
+    color: var(--primary-gold);
+    opacity: 0.8;
+}
+
+.divider-gold {
+    background: linear-gradient(90deg, var(--primary-gold), transparent);
+}
+
+.hover-gold-bg:hover {
+    background-color: var(--primary-gold) !important;
+    color: #fff !important;
+    border-color: var(--primary-gold) !important;
+    transform: translateX(5px);
+}
+
+.bg-gradient-light-red {
+    background: linear-gradient(135deg, #fff5f5 0%, #fff0f0 100%);
+}
+
+.fraud-icon-box {
+    box-shadow: 0 5px 15px rgba(220, 53, 69, 0.15) !important;
+}
+
+
+/* =========================================
+   PREMIUM TABS SECTION STYLES
+   ========================================= */
+
+.premium-tab-card {
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.nav-tabs-premium {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden;
+    border-bottom: 2px solid #f0f0f0;
+    padding: 0 1rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* Firefox */
+    gap: 10px;
+    /* spacing between tabs */
+}
+
+/* Hide scrollbar for Chrome/Safari/Opera */
+.nav-tabs-premium::-webkit-scrollbar {
+    display: none !important;
+}
+
+.nav-tabs-premium .nav-item {
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.nav-tabs-premium .nav-link {
+    border: none;
+    color: #6c757d;
+    font-weight: 600;
+    padding: 1rem 1.25rem;
+    position: relative;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.nav-tabs-premium .nav-link:hover {
+    color: var(--primary-gold);
+}
+
+.nav-tabs-premium .nav-link.active {
+    color: var(--primary-blue);
+    background: transparent;
+}
+
+.nav-tabs-premium .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-gold);
+    border-radius: 3px 3px 0 0;
+}
+
+.tab-list-item {
+    padding: 1rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid #f8f9fa;
+}
+
+.tab-list-item:last-child {
+    border-bottom: none;
+}
+
+.tab-list-item:hover {
+    background-color: rgba(0, 33, 71, 0.03);
+    /* Subtle blue tint */
+}
+
+.tab-list-item:hover .hover-blue {
+    color: var(--primary-blue) !important;
+}
+
+/* Custom Scrollbar for Tabs */
+.custom-scrollbar-premium::-webkit-scrollbar {
+    width: 6px;
+}
+
+.custom-scrollbar-premium::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.custom-scrollbar-premium::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+
+/* =========================================
+   PREMIUM QUICK LINKS SECTION STYLES
+   ========================================= */
+
+.premium-links-card {
+    background: #fff;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.links-header-gradient {
+    background: linear-gradient(135deg, var(--primary-blue), #1a3c6b);
+    padding: 1rem;
+    position: relative;
+    border-bottom: 4px solid var(--primary-gold);
+}
+
+.links-header-icon {
+    font-size: 2.5rem;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.premium-list-item {
+    background-color: #fff;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 0.8rem 1.5rem;
+    color: #495057;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+    border-left: 3px solid transparent;
+}
+
+.premium-list-item:last-child {
+    border-bottom: none;
+}
+
+.premium-list-item i.bi-chevron-right {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    margin-left: auto;
+    color: var(--primary-gold);
+}
+
+.premium-list-item:hover {
+    padding-left: 2rem;
+    background: linear-gradient(to right, rgba(212, 175, 55, 0.08), transparent);
+    color: var(--primary-blue);
+    border-left-color: var(--primary-gold);
+    text-decoration: none;
+}
+
+.premium-list-item:hover i.bi-chevron-right {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.premium-list-item i.link-icon {
+    margin-right: 15px;
+    font-size: 1.1rem;
+    color: #adb5bd;
+    transition: color 0.3s ease;
+}
+
+.premium-list-item:hover i.link-icon {
+    color: var(--primary-gold);
 }
 
 h1,
@@ -240,6 +485,17 @@ h6 {
 /* Marquee / Ticker */
 .marquee-container {
     white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+/* Responsiveness for Dashboard Content */
+@media (max-width: 991.98px) {
+    .dashboard-content {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
 }
 
 .marquee-content {
@@ -842,7 +1098,7 @@ h6 {
 .search-input-large {
     width: 100%;
     padding: 15px 120px 15px 25px;
-    border-radius: 8px;
+    border-radius: 33px;
     border: none;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     font-size: 1rem;
@@ -857,7 +1113,7 @@ h6 {
     /* Deep Red */
     color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: 33px;
     padding: 0 25px;
     font-weight: 600;
     transition: background 0.3s ease;
@@ -1046,4 +1302,41 @@ h6 {
     margin-top: 5px;
     text-transform: uppercase;
     font-weight: bold;
+}
+
+/* =========================================
+   FULL WIDTH MESSAGE SECTION - PREMIUM STYLES
+   ========================================= */
+
+.premium-message-container {
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.message-desk-icon i {
+    color: var(--primary-gold);
+    opacity: 0.8;
+}
+
+.divider-gold {
+    background: linear-gradient(90deg, var(--primary-gold), transparent);
+}
+
+.hover-gold-bg:hover {
+    background-color: var(--primary-gold) !important;
+    color: #fff !important;
+    border-color: var(--primary-gold) !important;
+    transform: translateX(5px);
+}
+
+.bg-gradient-light-red {
+    background: linear-gradient(135deg, #fff5f5 0%, #fff0f0 100%);
+}
+
+.fraud-icon-box {
+    box-shadow: 0 5px 15px rgba(220, 53, 69, 0.15) !important;
+}
+
+.opacity-10 {
+    opacity: 0.1;
 }
